@@ -23,11 +23,11 @@ var Complaint = mongoose.model("logs", complaint_Schema);
 
 //Web3
 
-var Web3 = new web3(new web3.providers.HttpProvider('https://ropsten.infura.io/v3/f57be24718f44af8b82a587f4a2016a0'));
-var myAddress = '0x30346d22C7e8385f056CF8749976bbC61F16ACDb';
-var privateKey = Buffer.from('e5d2415ed25948994de242cae4d89543c3a3c2d363a86cc2a8ce1791b6f34fb0', 'hex')
+var Web3 = new web3(new web3.providers.HttpProvider('url'));
+var myAddress = 'myaddress';
+var privateKey = Buffer.from('key', 'hex')
 var contractABI = JSON.parse(fs.readFileSync('ethereum/abi.json', 'utf8'));
-var contractAddress = "0xf490a41cb7223233efe58220757f842061517943";
+var contractAddress = "contractAddress";
 var contract = new Web3.eth.Contract(contractABI, contractAddress);
 
 
