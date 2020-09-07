@@ -1,0 +1,52 @@
+mixin add(username, genre)
+  tr
+    td.min(data-label="Username") #{username}
+    td.min(data-label="Genre") <img src = "#{urlImg}" style ="width:10%; height:10%; "/>
+- var urlImg = "/img/" + userInfo.username + ".jpeg";
+
+html
+    head
+        title Home
+        meta(charset="UTF-8")
+        link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet")
+    body
+        nav(class="navbar navbar-expand-lg navbar-light bg-light")
+            a(class = "navbar-brand") Home
+            button(type="button", onclick="window.open('/logout', '_self');", class="btn btn-primary") Logout
+        br
+        br
+        div(class="row")
+            div(class="col-sm-3")
+            div(class="col-sm-6 card")
+                br
+                div(class="row")
+                    div(class="col-sm-6")
+                        b Username                
+                        p #{userInfo.username}
+                        b Email
+                        p #{userInfo.email}
+                        b Genre
+                        p #{userInfo.genre}
+                        br
+                    div(class="col-sm-6")
+                        .image-block
+                            h3 Photo
+                            img(src = "#{urlImg}" style ="width:50%; height:50%; ")
+            div(class="col-sm-3")  
+        br
+        br
+        .container
+          .event-registration.reset
+            .content.wide
+              .row-inset
+                table.table
+                    thead(data-header="true").thead-dark
+                        tr
+                            th(data-sort-column="true") Username
+                            th(data-sort-column="true") Photo
+                    tbody(data-body="true")
+                    - for (var i = usersFound.length - 1; i>=0; i--)
+                        - urlImg = "/img/" + usersFound[i][0] + ".jpeg";
+                        +add(usersFound[i][0], urlImg)      
+                         
+            

@@ -1,0 +1,35 @@
+html
+    head
+        title Register
+        meta(charset="UTF-8")
+        link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet")
+    body
+        div(class="row")
+            div(class="col-sm-3")
+            div(class="col-sm-6")
+                br
+                br
+                h1 User Creation Form
+                br
+                form(action="/register" method="POST" enctype="multipart/form-data")
+                    label(for="username") Username
+                    input(type="text" name="username" placeholder="Type here..." id="username" class="form-control" required)
+                    label(for="email") Email
+                    input(type="text" name="email" placeholder="Type here..." id="email" class="form-control" required)
+                    label(for="genre") Genre
+                    br
+                    select(id="genre", name="genre")
+                        option(value="F") Female
+                        option(value="M") Male
+                    br
+                    label(for="password") Password
+                    input(type="password" name="password" placeholder="Type here..." id="password" class="form-control" required) 
+                    br
+                    label(for="photo") Upload a Photo
+                    br
+                    input(type="file" name="photo" id="photo" accept="image/jpeg" required)
+                    br  
+                    br       
+                    input(type="submit" value="Submit" class= "btn btn-primary")
+            
+            div(class="col-sm-3")

@@ -1,0 +1,17 @@
+html
+    head
+        title Message
+        meta(charset="UTF-8")
+        link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet")
+    body
+        br
+        br
+        div(class="row")
+            div(class="col-sm-3")
+            div(class="col-sm-6")
+                center 
+                    b #{message}
+                    br
+                    br
+                    button(type="button", onclick="window.open('/home', '_self');", class="btn btn-primary") Go Home
+            div(class="col-sm-3")
